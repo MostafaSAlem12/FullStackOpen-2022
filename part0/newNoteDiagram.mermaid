@@ -1,0 +1,18 @@
+sequenceDiagram
+actor User
+    User->>+Browser : Click the sumbit button
+    Browser->>+Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    Note left of Browser: the browser will send the user input data to the server
+    Server-->>Browser:The server responds with HTTP status code 302
+    Note left of Browser: the browser reloads the Notes page
+    Note right of Server: Fetching the style-sheet file main.css
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    Server-->>Browser:the css file
+    Note right of Server: Fetching the javascript  file main.js
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    Server-->>Browser:the javascript file
+    Note right of Server: Fetching the raw data of the notes data.json
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    Server-->>Browser:the data.json file
+    Browser->>+User: Load the page with new note
+    

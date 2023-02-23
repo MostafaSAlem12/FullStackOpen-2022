@@ -1,0 +1,8 @@
+sequenceDiagram 
+actor User
+    User->>+Browser : Click the sumbit button
+    Browser->>+Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note left of Browser: The POST request to the address new_note_spa contains the new note as JSON data
+    Server-->>Browser:The server responds with HTTP status code 201 created
+    Note left of Browser: the JavaScript code it fetched from the server
+    Browser->>+User : load the page with new data

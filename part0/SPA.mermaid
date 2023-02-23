@@ -1,0 +1,13 @@
+sequenceDiagram
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    Server-->>Browser:The html file
+    Note right of Server: Fetching the style  file main.css
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    Server-->>Browser:the css file
+    Note right of Server: Fetching the javascript  file spa.js
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    Server-->>Browser:the javascript file
+    Note right of Server: AJAX Request
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    Server-->>Browser:the data.json file
+    
